@@ -4,9 +4,10 @@ import {
     NavbarBrand,
     NavbarContent,
     NavbarItem,
-    Input,
 } from '@nextui-org/react';
 import HeaderAuth from '@/components/header-auth';
+import SearchInput from './search-input';
+import { Suspense } from 'react';
 
 export default function Header() {
     
@@ -18,7 +19,10 @@ export default function Header() {
             </NavbarBrand>
             <NavbarContent justify='center'>
                 <NavbarItem>
-                    <Input />
+                    {/* Always wrap searches in suspense tag */}
+                    <Suspense>
+                        <SearchInput />
+                    </Suspense>
                 </NavbarItem>
             </NavbarContent>
             <NavbarContent justify='end'>
